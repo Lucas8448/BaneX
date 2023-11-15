@@ -11,6 +11,7 @@ import SpacesOverview from "./pages/Spaces/SpacesOverview";
 import SpaceView from "./pages/Spaces/SpaceView";
 import ReservationView from "./pages/Reservations/ReservationView";
 import ReservationCreation from "./pages/Reservations/ReservationCreation";
+import Ines from "./components/Ines";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
         path: "reservations/:id",
         element: <ReservationView />,
       },
+      {
+        path: "ines",
+        element: <Ines />
+      }
     ],
   },
 ]);
