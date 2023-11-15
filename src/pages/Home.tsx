@@ -1,5 +1,3 @@
-import togVedStasjon from "/tog_ved_stasjon.jpg";
-
 export default function Home() {
   return (
     <>
