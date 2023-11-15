@@ -15,11 +15,7 @@ import ReservationCreation from "./pages/Reservations/ReservationCreation";
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      // Avoid automatic retries on failed requests as they may cause
-      // confusion for people without react-query experience
       retry: false,
-      // Set default stale time to 20 seconds to avoid some common issues
-      // when new to react query (too many fetches due to component remounts)
       staleTime: 1000 * 20,
     },
   },
