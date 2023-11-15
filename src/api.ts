@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:5167/";
+const baseUrl = "https://F21-godsvogn.azurewebsites.net/";
 
 async function apiGet<T>(path: string) {
   const response = await fetch(baseUrl + path, {
