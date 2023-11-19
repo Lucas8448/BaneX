@@ -4,13 +4,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Root from "./pages/Root";
 import ErrorView from "./pages/ErrorView";
 import Home from "./pages/Home";
-import LocationsOverview from "./pages/Locations/LocationsOverview";
-import LocationView from "./pages/Locations/LocationView";
-import ReservationsOverview from "./pages/Reservations/ReservationsOverview";
-import SpacesOverview from "./pages/Spaces/SpacesOverview";
-import SpaceView from "./pages/Spaces/SpaceView";
-import ReservationView from "./pages/Reservations/ReservationView";
-import ReservationCreation from "./pages/Reservations/ReservationCreation";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -30,41 +23,7 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <Home />,
-      },
-      {
-        path: "locations",
-        element: <LocationsOverview />,
-      },
-      {
-        path: "locations/:id",
-        element: <LocationView />,
-      },
-      {
-        path: "spaces",
-        element: <SpacesOverview />,
-      },
-      {
-        path: "spaces/:spaceId",
-        element: <SpaceView />,
-        children: [
-          {
-            path: "reservations",
-            element: <ReservationsOverview />,
-          },
-        ],
-      },
-      {
-        path: "reservations",
-        element: <ReservationsOverview />,
-      },
-      {
-        path: "reservations/create",
-        element: <ReservationCreation />,
-      },
-      {
-        path: "reservations/:id",
-        element: <ReservationView />,
-      },
+      }
     ],
   },
 ]);
