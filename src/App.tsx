@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Root from "./pages/Root";
 import ErrorView from "./pages/ErrorView";
 import Home from "./pages/Home";
+import LocationsPage from "./pages/Locations/LocationsPage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -23,6 +24,17 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <Home />,
+      }
+    ],
+  },
+  {
+    path: "/locations",
+    element: <Root />,
+    errorElement: <ErrorView />,
+    children: [
+      {
+        path: "",
+        element: <LocationsPage />,
       }
     ],
   },

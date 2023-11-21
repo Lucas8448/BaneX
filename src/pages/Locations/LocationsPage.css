@@ -1,0 +1,63 @@
+.locationsPageContainer {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.locationsPageTitle {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.customTable {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.customTable .rs-table-cell {
+  text-align: center;
+  padding: 10px;
+}
+
+.customModal {
+  max-width: 500px;
+  margin: auto;
+}
+
+.customModalHeader {
+  background-color: #007bff;
+  color: white;
+  padding: 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.customModalBody {
+  padding: 20px;
+}
+
+.customModalFooter {
+  padding: 10px;
+  text-align: right;
+}
+
+.customModalFooter button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.customModalFooter button:hover {
+  background-color: #0056b3;
+}
+
+.customTable .rs-table-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
