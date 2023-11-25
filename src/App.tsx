@@ -5,6 +5,7 @@ import Root from "./pages/Root";
 import ErrorView from "./pages/ErrorView";
 import Home from "./pages/Home";
 import LocationsPage from "./pages/Locations/LocationsPage";
+import Booking from "./pages/Booking/Booking";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -38,6 +39,17 @@ const router = createBrowserRouter([
       }
     ],
   },
+  {
+    path: "/booking",
+    element: <Root />,
+    errorElement: <ErrorView />,
+    children: [
+      {
+        path: "",
+        element: <Booking />,
+      }
+    ],
+  }
 ]);
 
 export default function App() {

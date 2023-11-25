@@ -13,6 +13,31 @@ async function apiGet<T>(path: string) {
     );
   return response.json() as T;
 }
+interface ProcessedData {
+  id: number;
+  name: string;
+  title: string;
+  track: string;
+}
+
+function processStations(data: SpaceOverviewDto[]): ProcessedData[] {
+  return data.map(item => {
+    let processedName = item.name;
+    if (item.name.toLowerCase().trim().startsWith("spor")) {
+      const descriptionParts = item.description.split(", ");
+      processedName = `${descriptionParts[descriptionParts.length - 1]} ${processedName}`;
+    }
+
+    const track = item.description.split(", ")[0];
+
+    return {
+      id: item.id,
+      name: processedName,
+      title: item.name,
+      track: track
+    };
+  });
+}
 
 async function apiPost<TResult>(path: string, body: unknown) {
   const response = await fetch(baseUrl + path, {
@@ -60,6 +85,16 @@ export async function getReservation(id: string) {
 
 export async function createReservation(reservation: ReservationCreationDto) {
   return apiPost<Reservation>("reservations", reservation);
+}
+
+export async function getAndProcessStations() {
+  try {
+    const stationsData = await apiGet<SpaceOverviewDto[]>("spaces");
+    return processStations(stationsData);
+  } catch (error) {
+    console.error("Error fetching or processing station data:", error);
+    throw error;
+  }
 }
 
 export interface Location {
@@ -142,5 +177,5 @@ export interface Space {
 export interface SpaceOverviewDto {
   id: number;
   name: string;
-  description?: string;
+  description: string;
 }
