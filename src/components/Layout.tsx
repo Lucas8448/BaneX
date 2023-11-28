@@ -21,7 +21,10 @@ export default function Layout({ children }: { children: ReactNode }) {
         </button>
       </nav>
       <div className={`menu ${isMenuOpen ? 'open' : ''}`}>
-        <Link to="/locations">Lokasjoner</Link>
+        <Link to="/">Home</Link>
+        <Link to="/booking">Booking</Link>
+        <Link to="/reservations">Reservations</Link>
+        <Link to="/receipts">Receipts</Link>
       </div>
       <div className={`main-content ${isMenuOpen ? 'shifted' : ''}`}>
         {children}

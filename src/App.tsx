@@ -1,11 +1,15 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import "./App.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Root from "./pages/Root";
 import ErrorView from "./pages/ErrorView";
 import Home from "./pages/Home";
 import LocationsPage from "./pages/Locations/LocationsPage";
 import Booking from "./pages/Booking/Booking";
+import ManualBooking from "./pages/Booking/ManualBooking";
+import ConfirmBooking from "./pages/Booking/ConfirmBooking";
+import Reservations from "./pages/Reservations/Reservations";
+import Receipts from "./pages/Receipts/Receipts";
+import Receipt from "./pages/Receipts/Receipt";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -22,34 +26,16 @@ const router = createBrowserRouter([
     element: <Root />,
     errorElement: <ErrorView />,
     children: [
-      {
-        path: "",
-        element: <Home />,
-      }
+      { path: "", element: <Home /> },
+      { path: "locations", element: <LocationsPage /> },
+      { path: "booking", element: <Booking /> },
+      { path: "booking/manual", element: <ManualBooking /> },
+      { path: "booking/confirm", element: <ConfirmBooking /> },
+      { path: "reservations", element: <Reservations /> },
+      { path: "receipts", element: <Receipts /> },
+      { path: "receipts/:receiptId", element: <Receipt /> },
     ],
   },
-  {
-    path: "/locations",
-    element: <Root />,
-    errorElement: <ErrorView />,
-    children: [
-      {
-        path: "",
-        element: <LocationsPage />,
-      }
-    ],
-  },
-  {
-    path: "/booking",
-    element: <Root />,
-    errorElement: <ErrorView />,
-    children: [
-      {
-        path: "",
-        element: <Booking />,
-      }
-    ],
-  }
 ]);
 
 export default function App() {
