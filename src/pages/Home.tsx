@@ -22,6 +22,7 @@ export default function Home() {
 
   return (
     <div className="home">
+      <h1>Velg Stasjon</h1>
       <div className="station-grid">
         {stations.map((station) => (
           <button
