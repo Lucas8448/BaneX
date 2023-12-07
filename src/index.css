@@ -13,3 +13,15 @@
 body {
   margin: 0;
 }
+
+.material-symbols-outlined {
+  vertical-align: middle;
+}
+
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}

@@ -28,7 +28,7 @@ const router = createBrowserRouter([
     children: [
       { path: "", element: <Home /> },
       { path: "locations", element: <LocationsPage /> },
-      { path: "booking", element: <Booking /> },
+      { path: "booking/:station_ids", element: <Booking /> },
       { path: "booking/manual", element: <ManualBooking /> },
       { path: "booking/confirm", element: <ConfirmBooking /> },
       { path: "reservations", element: <Reservations /> },

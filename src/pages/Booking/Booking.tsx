@@ -1,17 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const Booking = () => {
+  const { station } = useParams();
+  
   return (
     <div>
-      <h1>Train Station Booking</h1>
-      <p>Select an option to proceed with your booking:</p>
-
-      <div>
-        <Link to="/booking/manual">Manual Booking</Link>
-        <br />
-        <Link to="/booking/confirm">Confirm Booking</Link>
-      </div>
+      <h1>Booking</h1>
+      <p>Station: {station}</p>
+      <Link to="/booking/manual">Manual booking</Link>
     </div>
   );
 }
